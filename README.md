@@ -42,7 +42,7 @@
 
 ## Деплой на Railway
 
-1. Railway → **New Project → Deploy from GitHub repo** → выбрать этот репозиторий. Сборка и запуск описаны в `railway.json` (`npm ci && npm run build`, `npm start`, healthcheck `/health`).
+1. Railway → **New Project → Deploy from GitHub repo** → выбрать этот репозиторий. Сборка и запуск описаны в `railway.json` (`npm ci --include=dev && npm run build`, `npm start`, healthcheck `/health`).
 2. **Variables**: задать `YNAB_ACCESS_TOKEN` и `MCP_AUTH_TOKEN` (и при желании остальные).
 3. **Settings → Networking → Generate Domain** — получить публичный адрес вида `https://ynab-mcp-production.up.railway.app`.
 4. Проверить: `curl https://<домен>/health` → `{"status":"ok",...}`.
